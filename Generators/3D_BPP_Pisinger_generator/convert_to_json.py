@@ -29,9 +29,9 @@ def convert():
                 containers = []
 
                 container = {}
-                container['Length'] = w_container
-                container['Height'] = h_container
-                container['Depth'] = d_container
+                container['Length'] = int(w_container)
+                container['Height'] = int(h_container)
+                container['Depth'] = int(d_container)
                 container['Stock'] = None
                 container['Cost'] = int(w_container) * int(h_container) * int(d_container)
 
@@ -43,9 +43,9 @@ def convert():
                     w_item, h_item, d_item = content[i].split(" ")
 
                     item = {}
-                    item['Length'] = w_item
-                    item['Height'] = h_item
-                    item['Depth'] = d_item
+                    item['Length'] = int(w_item)
+                    item['Height'] = int(h_item)
+                    item['Depth'] = int(d_item)
                     item['Demand'] = 1
                     item['DemandMax'] = None
                     item['Value'] = int(w_item) * int(h_item) * int(d_item)
@@ -53,7 +53,7 @@ def convert():
                     items.append(item)
 
                 json_data = {}
-                json_data["name"] = f
+                json_data["Name"] = f
                 json_data["Objects"] = containers
                 json_data["Items"] = items
 
